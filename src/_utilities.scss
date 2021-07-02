@@ -1,0 +1,27 @@
+.stack {
+  display: grid;
+}
+.stack > * {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.myt {
+  margin-top: 10rem;
+}
+
+.myb {
+  margin-bottom: 10rem;
+}
+
+.mt {
+  margin-top: 6vh;
+}
+
+.mt-h1 {
+  margin-top: 20vh;
+}
+
+.padding {
+  padding: 2rem;
+}

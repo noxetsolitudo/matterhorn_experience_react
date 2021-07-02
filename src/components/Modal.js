@@ -6,8 +6,10 @@ const Modal = ({ children, show, close }) => {
       {show ? (
         <div>
           <div className="modal-backdrop"></div>
-          <div className="flex-col">
-            <button onClick={close}>x</button>
+          <div className="modal-children">
+            <button onClick={close} className="close-button">
+              x
+            </button>
             {children}
           </div>
         </div>

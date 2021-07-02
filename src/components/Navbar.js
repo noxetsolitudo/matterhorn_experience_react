@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ blur, unblur }) => {
   return (
-    <ul className="flex-row">
+    <ul className="flex flex-row align-nav">
       <li>
         <Link
           to="/climb"

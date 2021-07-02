@@ -1,10 +1,11 @@
 import { React, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Main from './components/Main';
 import Climb from './pages/Climb';
 import Ski from './pages/Ski';
 import Fly from './pages/Fly';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MessagesBoard from './pages/MessagesBoard';
 
 function App() {
   const [background, setBackground] = useState('wrapper');
@@ -32,7 +33,6 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
-              whatClass="climb"
             />
           </Route>
           <Route path="/ski">
@@ -42,7 +42,6 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
-              whatClass="ski"
             />
           </Route>
           <Route path="/fly">
@@ -52,8 +51,10 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
-              whatClass="fly"
             />
+          </Route>
+          <Route path="/messages">
+            <MessagesBoard />
           </Route>
         </Switch>
       </div>
