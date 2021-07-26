@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from '../components/Modal';
 import Popup from '../components/Popup';
 
-const Climb = ({ show, close, showPopup }) => {
+const Climb = ({ show, close, showPopup, onSubmit }) => {
   return (
     <div className="climb">
       <div className="container">
@@ -21,7 +21,7 @@ const Climb = ({ show, close, showPopup }) => {
         </div>
         <div className="flex align-center">
           <Modal show={show} close={close}>
-            <Popup />
+            <Popup onSubmit={onSubmit} />
           </Modal>
         </div>
       </div>

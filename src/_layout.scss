@@ -17,8 +17,12 @@
   }
 }
 
+.flex-item {
+  flex: 1;
+}
+
 .gap {
-  gap: 4rem;
+  gap: 0.5rem;
 }
 
 .align-nav {
@@ -36,4 +40,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.text-left {
+  text-align: left;
 }

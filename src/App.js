@@ -1,5 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import climbDB from './db/messagesBoardClimbDB.json';
+import skiDB from './db/messagesBoardSkiDB.json';
+import flyDB from './db/messagesBoardFlyDB.json';
 import './App.scss';
 import Main from './components/Main';
 import Climb from './pages/Climb';
@@ -10,6 +13,33 @@ import MessagesBoard from './pages/MessagesBoard';
 function App() {
   const [background, setBackground] = useState('wrapper');
   const [show, setShow] = useState(false);
+  const [messagesClimbDB, setMessagesClimbDB] = useState(climbDB);
+  const [messagesSkiDB, setMessagesSkiDB] = useState(skiDB);
+  const [messagesFlyDB, setMessagesFlyDB] = useState(flyDB);
+
+  const onSubmitClimb = ([author, content]) => {
+    const obj = {
+      author: author,
+      content: content,
+    };
+    setMessagesClimbDB([...messagesClimbDB, obj]);
+  };
+
+  const onSubmitSki = ([author, content]) => {
+    const obj = {
+      author: author,
+      content: content,
+    };
+    setMessagesSkiDB([...messagesSkiDB, obj]);
+  };
+
+  const onSubmitFly = ([author, content]) => {
+    const obj = {
+      author: author,
+      content: content,
+    };
+    setMessagesFlyDB([...messagesFlyDB, obj]);
+  };
 
   // useEffect(() => {
   //   setBackground('wrapper');
@@ -33,6 +63,7 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
+              onSubmit={onSubmitClimb}
             />
           </Route>
           <Route path="/ski">
@@ -42,6 +73,7 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
+              onSubmitSki={onSubmitSki}
             />
           </Route>
           <Route path="/fly">
@@ -51,10 +83,15 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
+              onSubmitFly={onSubmitFly}
             />
           </Route>
           <Route path="/messages">
-            <MessagesBoard />
+            <MessagesBoard
+              messagesClimbDB={messagesClimbDB}
+              messagesSkiDB={messagesSkiDB}
+              messagesFlyDB={messagesFlyDB}
+            />
           </Route>
         </Switch>
       </div>

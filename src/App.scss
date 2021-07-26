@@ -107,11 +107,39 @@ h3 {
   font-size: clamp(1rem, calc(3vw + 1rem), 1.75rem);
 }
 
-textarea {
+h4 {
   margin: 1vh 0 0 2vw;
-  width: 200px;
-  // border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-size: clamp(1rem, calc(3vw + 1rem), 1.5rem);
+}
+
+input {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $secondary-color;
+  width: 300px;
+  background: transparent;
   outline: none;
+  font-family: $font-input;
+}
+
+textarea {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $secondary-color;
+  margin: 1vh 0 0 2vw;
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  outline: none;
+  font-family: $font-input;
+}
+
+::placeholder {
+  font-size: 1.75rem;
+  font-family: 'Akronim', cursive;
+  color: $secondary-color;
+  opacity: 1;
 }
 
 button {
@@ -122,6 +150,7 @@ button {
   // border-radius: 1rem;
   cursor: pointer;
   font-family: 'Akronim', cursive;
+  font-size: 1.5rem;
   color: $secondary-color;
 }
 
@@ -140,6 +169,9 @@ button {
 
 // Pages
 // Climb
+
+// IMPORTANT!!:
+// the idea is : style climb manages whole page whre className = 'climb' is applied, same goes for the ski and fly
 .climb {
   background: url('./img/climb01.jpg') no-repeat center center/cover;
 
@@ -151,25 +183,31 @@ button {
     color: $secondary-color;
   }
 
+  h3 {
+    color: $climb-color;
+  }
+
+  h4 {
+    color: $secondary-color;
+  }
+
+  input {
+    border-top: 1px solid $climb-color;
+    border-bottom: 5px solid $climb-color;
+    border-left: 5px solid $climb-color;
+    border-right: 5px solid $climb-color;
+  }
+
   textarea {
     border-top: 1px solid $climb-color;
     border-bottom: 1px solid $climb-color;
-    border-left: 3px solid $climb-color;
-    border-right: 3px solid $climb-color;
-    width: 300px;
-    height: 200px;
-    background: transparent;
-  }
-
-  ::placeholder {
-    font-size: 1rem;
-    // font-family: 'Akronim', cursive;
-    color: $secondary-color;
+    border-left: 5px solid $climb-color;
+    border-right: 5px solid $climb-color;
   }
 
   button {
     background-color: transparent;
-    border: 3px solid $climb-color;
+    border: 5px solid $climb-color;
     padding: 0.25rem;
 
     &:hover {
@@ -194,24 +232,31 @@ button {
     color: $secondary-color;
   }
 
+  h3 {
+    color: $ski-color;
+  }
+
+  h4 {
+    color: $secondary-color;
+  }
+
+  input {
+    border-top: 1px solid $ski-color;
+    border-bottom: 5px solid $ski-color;
+    border-left: 5px solid $ski-color;
+    border-right: 5px solid $ski-color;
+  }
+
   textarea {
     border-top: 1px solid $ski-color;
     border-bottom: 1px solid $ski-color;
-    border-left: 3px solid $ski-color;
-    border-right: 3px solid $ski-color;
-    width: 300px;
-    height: 200px;
-    background: transparent;
-  }
-
-  ::placeholder {
-    font-size: 1rem;
-    color: $secondary-color;
+    border-left: 5px solid $ski-color;
+    border-right: 5px solid $ski-color;
   }
 
   button {
     background-color: transparent;
-    border: 3px solid $ski-color;
+    border: 5px solid $ski-color;
     padding: 0.5rem;
 
     &-close {
@@ -235,24 +280,31 @@ button {
     color: $secondary-color;
   }
 
+  h3 {
+    color: $fly-color;
+  }
+
+  h4 {
+    color: $secondary-color;
+  }
+
+  input {
+    border-top: 1px solid $fly-color;
+    border-bottom: 5px solid $fly-color;
+    border-left: 5px solid $fly-color;
+    border-right: 5px solid $fly-color;
+  }
+
   textarea {
     border-top: 1px solid $fly-color;
     border-bottom: 1px solid $fly-color;
-    border-left: 3px solid $fly-color;
-    border-right: 3px solid $fly-color;
-    width: 300px;
-    height: 200px;
-    background: transparent;
-  }
-
-  ::placeholder {
-    font-size: 1rem;
-    color: $secondary-color;
+    border-left: 5px solid $fly-color;
+    border-right: 5px solid $fly-color;
   }
 
   button {
     background-color: transparent;
-    border: 3px solid $fly-color;
+    border: 5px solid $fly-color;
     padding: 0.5rem;
 
     &-close {
@@ -293,11 +345,22 @@ button {
   }
 }
 
-.underline {
-  border-top: 5px double $secondary-color;
+.messages-underline {
+  border-top: 2px dotted $secondary-color;
+  padding-top: 1rem;
   // border-bottom: 2px dotted $secondary-color;
 }
 
 .b {
   border: 4px red solid;
+}
+
+.home-button {
+  background-color: transparent;
+  border: 5px solid $secondary-color;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: #6e6e6e;
+  }
 }
