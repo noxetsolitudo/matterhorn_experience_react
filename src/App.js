@@ -73,7 +73,7 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
-              onSubmitSki={onSubmitSki}
+              onSubmit={onSubmitSki}
             />
           </Route>
           <Route path="/fly">
@@ -83,7 +83,7 @@ function App() {
               showPopup={() => {
                 setShow(true);
               }}
-              onSubmitFly={onSubmitFly}
+              onSubmit={onSubmitFly}
             />
           </Route>
           <Route path="/messages">

@@ -8,7 +8,7 @@ const MessagesBoard = ({ messagesClimbDB, messagesSkiDB, messagesFlyDB }) => {
       <div className="flex flex-col align-center text-left">
         <div>
           <Link to="/">
-            <button className="home-button mt">HOME</button>
+            <button className="home-button myt">HOME</button>
           </Link>
         </div>
         <div className="flex flex-row gap">

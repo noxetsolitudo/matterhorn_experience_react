@@ -16,7 +16,7 @@ const Main = ({ blur, unblur }) => {
       </div>
       <div
         className="container container-footer"
-        style={{ marginTop: '-3rem' }}
+        style={{ marginTop: '-4rem' }}
       >
         {/* ^ only way to move the footer up a bit */}
         <Footer blur={blur} unblur={unblur} />

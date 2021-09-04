@@ -3,25 +3,25 @@ import React from 'react';
 import Modal from '../components/Modal';
 import Popup from '../components/Popup';
 
-const Fly = ({ show, close, showPopup }) => {
+const Fly = ({ show, close, showPopup, onSubmit }) => {
   return (
     <div className="fly">
       <div className="container">
         <div className="flex flex-row align-pages">
           <div>
-            <h1>Flying</h1>
-            <h2>Enjoy the freedom like no other!</h2>
+            <Link to="/">
+              <button className="home-button">HOME</button>
+            </Link>
+            <h1 className="mt">Flying</h1>
+            <h2 className="myb">Enjoy the freedom like no other!</h2>
             <button onClick={showPopup} className="popup-button">
               Leave us a message
             </button>
           </div>
-          <Link to="/">
-            <button className="fly-btn mt">HOME</button>
-          </Link>
         </div>
         <div className="flex align-center">
           <Modal show={show} close={close}>
-            <Popup />
+            <Popup onSubmit={onSubmit} close={close} />
           </Modal>
         </div>
       </div>

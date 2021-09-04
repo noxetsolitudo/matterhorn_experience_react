@@ -9,19 +9,19 @@ const Climb = ({ show, close, showPopup, onSubmit }) => {
       <div className="container">
         <div className="flex flex-row align-pages ">
           <div>
-            <h1>Climbing</h1>
-            <h2>Ready for new chalenges?</h2>
+            <Link to="/">
+              <button className="home-button">HOME</button>
+            </Link>
+            <h1 className="mt">Climbing</h1>
+            <h2 className="myb">Ready for new chalenges?</h2>
             <button onClick={showPopup} className="popup-button">
               Leave us a message
             </button>
           </div>
-          <Link to="/">
-            <button className="mt">HOME</button>
-          </Link>
         </div>
         <div className="flex align-center">
           <Modal show={show} close={close}>
-            <Popup onSubmit={onSubmit} />
+            <Popup onSubmit={onSubmit} close={close} />
           </Modal>
         </div>
       </div>
